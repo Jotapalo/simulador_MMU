@@ -9,8 +9,13 @@ AddressTranslator::AddressTranslator(const TranslationConfig& cfg)
       pageTable_(cfg.pageTable) {}
 
 TranslationResult AddressTranslator::translate(int virtualAddress) const {
+    // Descomposición:
+    // pageIndex = virtualAddress / pageSize
+    // offset    = virtualAddress % pageSize
     TranslationResult res;
+
     if (virtualAddress < 0) return res;
+
 
     const int pageIndex = virtualAddress / pageSize_;
     const int offset = virtualAddress % pageSize_;
