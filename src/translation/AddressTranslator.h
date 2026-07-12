@@ -4,6 +4,10 @@
 
 struct TranslationConfig;
 
+// Resultado de traducir una dirección virtual.
+// - mapped: indica si existe mapeo válido en la tabla de páginas y marco disponible.
+// - pageIndex/frameIndex/offset: descomposición de la dirección.
+// - physicalAddress: dirección física calculada (válida si mapped==true).
 struct TranslationResult {
     bool mapped{false};
     int pageIndex{-1};
@@ -11,6 +15,7 @@ struct TranslationResult {
     int offset{-1};
     int physicalAddress{-1};
 };
+
 
 class AddressTranslator {
 public:
