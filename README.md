@@ -8,7 +8,6 @@ Simulador de:
 Recomendado: `g++` con C++17.
 
 ```bash
-cd MemorySimulator
 g++ -std=c++17 -O2 -Isrc -o mmu.exe \
   src/main.cpp \
   src/core/Simulator.cpp \
@@ -29,7 +28,7 @@ Esta carpeta incluye `Dockerfile` y `docker-compose.yml`.
 ### Ejecutar con docker-compose
 Desde la raíz:
 ```bat
-docker compose -f MemorySimulator/docker-compose.yml up --build
+docker compose -f docker-compose.yml up --build
 ```
 
 ### Ejecutar directo (alternativa)
