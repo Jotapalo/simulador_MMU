@@ -9,10 +9,16 @@ AddressTranslator::AddressTranslator(const TranslationConfig& cfg)
       pageTable_(cfg.pageTable) {}
 
 TranslationResult AddressTranslator::translate(int virtualAddress) const {
-    // Descomposición:
-    // pageIndex = virtualAddress / pageSize
-    // offset    = virtualAddress % pageSize
+    // Descomposición de VA:
+    // - pageIndex = virtualAddress / pageSize
+    // - offset    = virtualAddress % pageSize
+    //
+    // Validaciones:
+    // - Si pageIndex está fuera de [0, numPages), no hay mapeo.
+    // - Se consulta pageTable_[pageIndex] para obtener frameIndex.
+    // - Si frameIndex es inválido (o <0 o >= numFrames), no hay mapeo.
     TranslationResult res;
+
 
     if (virtualAddress < 0) return res;
 

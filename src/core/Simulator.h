@@ -4,13 +4,29 @@
 
 class Simulator {
 public:
-    // Ejecuta la traducción de una lista de direcciones virtuales a direcciones físicas.
-    // La traducción usa paginación de 1 nivel (tabla de páginas por página virtual).
+    // Traduce direcciones virtuales a direcciones físicas.
+    //
+    // Parámetros:
+    // - filePath: ruta del archivo de configuración (ej. examples/translation1.txt).
+    //
+    // Acción:
+    // - Lee la configuración (page_size, num_pages, num_frames, page_table, virtual_addresses).
+    // - Para cada dirección virtual imprime si está mapeada y, si lo está, calcula PA usando:
+    //   pageIndex = VA / page_size, offset = VA % page_size.
     static void runTranslation(const std::string& filePath);
 
-    // Ejecuta un simulador de reemplazo de páginas para una secuencia de referencias.
-    // Compara FIFO, LRU y OPT sobre la misma configuración.
+    // Simula reemplazo de páginas para una secuencia de referencias.
+    //
+    // Parámetros:
+    // - filePath: ruta del archivo de configuración (ej. examples/replacement1.txt).
+    //
+    // Acción:
+    // - Lee num_frames y la secuencia de referencias.
+    // - Ejecuta FIFO, LRU y OPT sobre la MISMA secuencia y reporta hits/faults.
     static void runReplacement(const std::string& filePath);
 };
+
+
+
 
 
