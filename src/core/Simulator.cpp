@@ -13,7 +13,7 @@ void Simulator::runTranslation(const std::string& filePath) {
     TranslationConfig cfg = FileReader::readTranslationConfig(filePath);
 
     AddressTranslator translator(cfg);
-    std::cout << "=== Traducción Virtual -> Física ===\n";
+    std::cout << "=== Traduccion Virtual -> Fisica ===\n";
     std::cout << "page_size=" << cfg.pageSize << " num_pages=" << cfg.numPages << " num_frames=" << cfg.numFrames << "\n";
 
     for (auto vaddr : cfg.virtualAddresses) {
@@ -32,7 +32,7 @@ void Simulator::runTranslation(const std::string& filePath) {
 void Simulator::runReplacement(const std::string& filePath) {
     ReplacementConfig cfg = FileReader::readReplacementConfig(filePath);
 
-    std::cout << "=== Simulador Reemplazo de Páginas ===\n";
+    std::cout << "=== Simulador Reemplazo de paginas===\n";
     std::cout << "num_frames=" << cfg.numFrames << "\n";
     std::cout << "references=";
     for (size_t i = 0; i < cfg.references.size(); ++i) {
