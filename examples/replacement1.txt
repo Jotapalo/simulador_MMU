@@ -1,0 +1,9 @@
+# replacement1.txt - Reemplazo de páginas
+# Estrategias: FIFO, LRU, OPT
+
+num_frames 3
+
+# Secuencia de referencias a páginas (IDs de página en decimal)
+references
+7 0 1 2 0 3 0 4 2 3 0 3
+

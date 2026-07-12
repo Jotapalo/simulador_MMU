@@ -1,0 +1,34 @@
+# translation1.txt - Paginación 1 nivel
+# Configuración
+page_size 256
+num_pages 16
+num_frames 8
+
+# Tabla de páginas: page_index -> frame_index, o -1 si no mapeada
+page_table
+0 0
+1 3
+2 1
+3 -1
+4 6
+5 2
+6 5
+7 -1
+8 4
+9 7
+10  -1
+11 -1
+12 2
+13 0
+14 6
+15 -1
+
+# Direcciones virtuales a traducir (en base decimal)
+virtual_addresses
+0
+17
+300
+511
+1024
+2300
+

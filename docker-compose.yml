@@ -1,0 +1,6 @@
+services:
+  mmu-sim:
+    build: .
+    stdin_open: true
+    tty: true
+
